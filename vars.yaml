@@ -1,3 +1,7 @@
+user_config:
+  default_user: opc
+  home_dir: /home/opc
+
 database_config:
   mysql_root_password: <value_here>
   mysql_database: <value_here>

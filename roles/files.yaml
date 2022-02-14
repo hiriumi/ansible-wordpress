@@ -1,0 +1,19 @@
+- name: Create directory structure
+  file:
+    name: "{{ item }}"
+    state: directory
+    owner: "{{ user_config.default_user }}"
+    group: "{{ user_config.default_user }}"
+  with_items:
+    - "{{user_config.home_dir}}/wordpress"
+    - "{{user_config.home_dir}}/wordpress/mysql"
+    - "{{user_config.home_dir}}/wordpress/nginx"
+    - "{{user_config.home_dir}}/wordpress/nginx/conf.d"
+    - "{{user_config.home_dir}}/wordpress/nginx/conf.d/ssl"
+
+- name: Place Files
+  copy:
+    src: ./files/docker-compose.yaml
+    dest: "{{user_config.home_dir}}/wordpress"
+    owner: "{{ user_config.default_user }}"
+    group: "{{ user_config.default_user }}"

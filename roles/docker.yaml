@@ -1,0 +1,11 @@
+- name: Enable/Start Docker
+  systemd:
+    name: docker
+    enabled: yes
+    state: started
+
+- name: Add user opc to docker group
+  user:
+    name: opc
+    groups: docker
+    append: yes

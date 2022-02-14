@@ -1,3 +1,21 @@
+- name: Install Packages
+  hosts: target_host
+  become: true
+  remote_user: opc
+  vars_files:
+    - vars.yaml
+  tasks:
+    - import_tasks: ./roles/yum.yaml
+
+- name: Directory/File Structure
+  hosts: target_host
+  become: true
+  remote_user: opc
+  vars_files:
+    - vars.yaml
+  tasks:
+    - import_tasks: ./roles/files.yaml
+
 - name: Docker
   hosts: target_host
   become: true
@@ -5,4 +23,4 @@
   vars_files:
     - vars.yaml
   tasks:
-    - debug: msg='hogehogehoge'
+    - import_tasks: ./roles/docker.yaml
