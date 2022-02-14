@@ -1,0 +1,6 @@
+- name: debug
+  hosts: target_host
+  become: true
+  remote_user: opc
+  tasks:
+    - debug: msg='hogehogehoge'
