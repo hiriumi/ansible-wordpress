@@ -1,6 +1,8 @@
-- name: debug
+- name: Docker
   hosts: target_host
   become: true
   remote_user: opc
+  vars_files:
+    - vars.yaml
   tasks:
     - debug: msg='hogehogehoge'

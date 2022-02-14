@@ -1,0 +1,6 @@
+database_config:
+  mysql_root_password: Hogehoge09
+  mysql_database: hayato_iriumi_db
+  mysql_user: blog_admin
+  mysql_password: Datalabs12345!
+  wordpress_db_user: blog_admin
