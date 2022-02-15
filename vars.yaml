@@ -3,8 +3,10 @@ user_config:
   home_dir: /home/opc
 
 database_config:
-  mysql_root_password: <value_here>
+  mysql_root_pass: <value_here>
   mysql_database: <value_here>
   mysql_user: <value_here>
   mysql_password: <value_here>
-  wordpress_db_user: <value_here>
+
+domain_config:
+  domain_name: <value_here>
