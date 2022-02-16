@@ -14,4 +14,4 @@ domain_config:
   ssl_crt: <value_here>
 
 docker_config:
-  docer_compose2: https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-aarch64
+  docker_compose2_arm64: https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-aarch64
