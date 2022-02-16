@@ -38,4 +38,9 @@ You can alternatively execute the following command to list the host.
 ansible-playbook main.yaml --list-host
 ```
 
-## Execute
+## Dry Run
+You can dry run the Ansible playbook
+```
+ansible-playbook main.yaml --check
+```
+Some steps may fail because dry run doesn't actually upload necessary files.

@@ -9,3 +9,14 @@
     name: opc
     groups: docker
     append: yes
+
+- name: Docker compose directory
+  file:
+    path: "{{ user_config.home_dir }}/.docker/cli-plugins/"
+    state: directory
+
+- name: Download Docker Compose 2
+  get_url:
+    url: "{{docker_config.docer_compose2}}"
+    dest: "{{ user_config.home_dir }}/.docker/cli-plugins/docker-compose"
+    mode: 0555

@@ -10,3 +10,8 @@ database_config:
 
 domain_config:
   domain_name: <value_here>
+  ssl_key: <value_here>
+  ssl_crt: <value_here>
+
+docker_config:
+  docer_compose2: https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-aarch64

@@ -21,16 +21,26 @@
 - name: Place nginx.conf file
   copy:
     src: ./files/nginx.conf
-    dest: "{{user_config.home_dir}}/nginx/nginx.conf"
+    dest: "{{user_config.home_dir}}/wordpress/nginx/nginx.conf"
     owner: "{{ user_config.default_user }}"
     group: "{{ user_config.default_user }}"
 
 - name: Place ssl.conf file
   copy:
     src: ./files/ssl.conf
-    dest: "{{user_config.home_dir}}/nginx/conf.d/ssl.conf"
+    dest: "{{user_config.home_dir}}/wordpress/nginx/conf.d/ssl.conf"
     owner: "{{ user_config.default_user }}"
     group: "{{ user_config.default_user }}"
+
+- name: Place cert key
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ user_config.default_user }}"
+    group: "{{ user_config.default_user }}"
+  with_items:
+  - { src: "./files/{{domain_config.ssl_key}}", dest: "{{user_config.home_dir}}/wordpress/nginx/conf.d/ssl/{{domain_config.ssl_key}}" }
+  - { src: "./files/{{domain_config.ssl_crt}}", dest: "{{user_config.home_dir}}/wordpress/nginx/conf.d/ssl/{{domain_config.ssl_crt}}" }
 
 - name: Validate configurations
   fail: msg="The key {{ item.key }} has the value {{ item.value }}. Please correct it in vars.yaml file."
@@ -43,3 +53,15 @@
     regexp: "<{{ item.key }}>"
     replace: "{{ item.value }}"
   with_dict: "{{ database_config }}"
+
+- name: Put domain name in nginx.conf
+  replace:
+    path: "{{user_config.home_dir}}/wordpress/nginx/nginx.conf"
+    regexp: "<domain_name>"
+    replace: "{{ domain_config.domain_name }}"
+
+- name: Put domain name in ssl.conf
+  replace:
+    path: "{{user_config.home_dir}}/wordpress/nginx/conf.d/ssl.conf"
+    regexp: "<domain_name>"
+    replace: "{{ domain_config.domain_name }}"
