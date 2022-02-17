@@ -1,5 +1,5 @@
 # ansible-wordpress
-A repo for creating WordPress site with Ansible
+A repo for creating WordPress site with Ansible. This repo targets Oracle Linux 8 on OCI on ARM64 processor. Most of the Ansible code will work for Oracle Linux 8 on AMD and Intel processors but you may need to tweak some things in this repo. ARM64 is faster and more reasonable anyway, so I chose this to be the starting point.
 
 
 ## Clone this repo.
@@ -44,3 +44,9 @@ You can dry run the Ansible playbook
 ansible-playbook main.yaml --check
 ```
 Some steps may fail because dry run doesn't actually upload necessary files.
+
+## Run Configuration
+To actually make changes to the target host, execute the following command.
+```
+ansible-playbook main.yaml
+```
