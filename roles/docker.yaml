@@ -17,6 +17,6 @@
 
 - name: Download Docker Compose 2
   get_url:
-    url: "{{docker_config.docker_compose2_arm64}}"
+    url: "{{ docker_config.docker_compose2_arm64 }}"
     dest: "{{ user_config.home_dir }}/.docker/cli-plugins/docker-compose"
     mode: 0555

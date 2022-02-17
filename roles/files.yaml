@@ -65,3 +65,15 @@
     path: "{{user_config.home_dir}}/wordpress/nginx/conf.d/ssl.conf"
     regexp: "<domain_name>"
     replace: "{{ domain_config.domain_name }}"
+
+- name: Place SSL key file in ssl.conf
+  replace:
+    path: "{{user_config.home_dir}}/wordpress/nginx/conf.d/ssl.conf"
+    regexp: "<ssl_key>"
+    replace: "{{ domain_config.ssl_key }}"
+
+- name: Place SSL cert file in ssl.conf
+  replace:
+    path: "{{user_config.home_dir}}/wordpress/nginx/conf.d/ssl.conf"
+    regexp: "<ssl_crt>"
+    replace: "{{ domain_config.ssl_crt }}"  
