@@ -1,5 +1,5 @@
 # ansible-wordpress
-A repo for creating WordPress site with Ansible. This repo targets Oracle Linux 8 on OCI on ARM64 processor. Most of the Ansible code will work for Oracle Linux 8 on AMD and Intel processors but you may need to tweak some things in this repo. ARM64 is faster and more reasonable anyway, so I chose this to be the starting point.
+A repo for creating WordPress site with Ansible. This repo targets Oracle Linux 8 on OCI on ARM64 processor. Most of the Ansible code in this repo will work for Oracle Linux 8 on AMD and Intel processors but you may need to tweak some things in this repo. ARM64 is faster and more reasonable anyway, so I chose this to be the starting point.
 
 
 ## Clone this repo.
