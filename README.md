@@ -34,11 +34,6 @@ Determine your passwords and database name for your WordPress site in vars.yaml 
 ## Place your SSL cert
 Place your SSL cert under files directory and modify vars.yaml to match the file names of .key and .crt files.
 
-## Dry run main.yaml
-Before you actually make the changes on the specified host in ansible-wordpress/hosts file, you can check if it's going to target the host you intend to.
-```
-ansible-playbook main.yaml --check
-```
 ## List Host
 You can alternatively execute the following command to list the host.
 ```
