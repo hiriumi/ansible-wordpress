@@ -27,6 +27,10 @@ Now you are ready to execute Ansible!
 
 ## Edit hosts File
 This repo has **hosts** file that has **target_host** group. You can specify the FQDN or IP address of the target host you want to configure. You can specify multiple hosts in the **target_host** group.
+
+## Place your SSL cert
+Place your SSL cert under files directory and modify vars.yaml to match the file names of .key and .crt files.
+
 ## Dry run main.yaml
 Before you actually make the changes on the specified host in ansible-wordpress/hosts file, you can check if it's going to target the host you intend to.
 ```

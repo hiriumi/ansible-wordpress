@@ -20,3 +20,8 @@
     url: "{{ docker_config.docker_compose2_arm64 }}"
     dest: "{{ user_config.home_dir }}/.docker/cli-plugins/docker-compose"
     mode: 0555
+
+# - name: Start the Docker containers
+#   shell: 
+#     cmd: "docker compose up -d"
+#     chdir: "{{ user_config.home_dir }}/wordpress"
